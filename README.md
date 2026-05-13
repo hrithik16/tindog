@@ -31,7 +31,6 @@ This is the **frontend demo application** that integrates the tracking script. U
 ├── tracker/
 │   └── tracker.js          # Event tracking script
 ├── build.js                # Build script for Vercel
-├── vercel.json             # Vercel configuration
 └── README.md               # This file
 ```
 
@@ -53,24 +52,6 @@ Fired on every click on the page. Includes:
 - `y`: Vertical click coordinate
 - `timestamp`: Event timestamp
 
-## Setup & Deployment
-
-### Local Development
-1. Clone the repository
-2. Update `tracker.js` API_URL to point to your local backend:
-   ```javascript
-   const API_URL = "http://localhost:5000/api/events";
-   ```
-3. Open `index.html` in a browser
-4. Start interacting with the page to generate events
-
-### Vercel Deployment
-1. Push to GitHub
-2. Connect repository to Vercel
-3. Set environment variable in Vercel dashboard:
-   - Name: `API_URL`
-   - Value: `https://your-backend-url.com/api/events`
-4. Deploy - the `build.js` script will automatically inject the API URL
 
 ## Assumptions & Trade-offs
 
@@ -103,18 +84,14 @@ This demo site sends all events to the CausalFunnel analytics backend. The backe
 - Generates heatmaps from click data
 - Powers the analytics dashboard
 
-See the main [CausalFunnel Analytics](../README.md) repository for full backend/dashboard setup.
+See the main [Analytics](https://github.com/hrithik16/user-analytics-app) repository for full backend/dashboard setup.
 
 ## Browser Compatibility
 
 - Chrome/Edge: ✅ Full support
 - Firefox: ✅ Full support
 - Safari: ✅ Full support (including crypto.randomUUID)
-- IE 11: ❌ Not supported (needs polyfills)
 
-## Performance Notes
 
-- Tracking is asynchronous and non-blocking
-- Events are sent via HTTP POST without waiting for response
-- Failed requests are logged but don't affect user experience
-- Session ID generated once per browser/device
+## Host URL
+https://demo-site-five-sable.vercel.app/
