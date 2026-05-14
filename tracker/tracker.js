@@ -1,5 +1,6 @@
 (() => {
-  const API_URL = "https://user-analytics-app-backend.onrender.com/api/events";
+  const API_URL =
+    "https://user-analytics-app-backend.onrender.com/api/events";
 
   const getSessionId = () => {
     let sessionId = localStorage.getItem("session_id");
@@ -30,6 +31,10 @@
     session_id: getSessionId(),
     page_url: window.location.href,
     timestamp: new Date(),
+
+    // ADD THESE
+    viewport_width: window.innerWidth,
+    viewport_height: window.innerHeight,
   });
 
   // Page View
